@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/inventory', function () {
+    return view('index');
+});
 
 
 Route::post('/create_inventory', [InventoryController::class, 'createInventory'])->name('create.inventory');
+Route::post('/delete_eventory/{id}', [InventoryController::class, 'deleteInventory'])->name('delete.inventory');
 
 
