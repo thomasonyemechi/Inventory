@@ -117,7 +117,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row" method="post"
+                    <form class="row" action="{{ route('update.inventory') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-8 form-group">

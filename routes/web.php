@@ -24,5 +24,6 @@ Route::get('/inventory', function () {
 
 Route::post('/create_inventory', [InventoryController::class, 'createInventory'])->name('create.inventory');
 Route::post('/delete_eventory/{id}', [InventoryController::class, 'deleteInventory'])->name('delete.inventory');
+Route::post('/update_eventory', [InventoryController::class, 'updateInventory'])->name('update.inventory');
 
 
