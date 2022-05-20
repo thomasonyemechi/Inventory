@@ -11,7 +11,15 @@
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <link rel="icon" href="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+
+    <script type="text/javascript">
+        setTimeout(function() {
+            $("#refresh").fadeOut(1000);
+        }, 3000);
+    </script>
 </head>
 
 
@@ -19,12 +27,12 @@
 <body class="theme-2" onload="getLocation()">
 
     @if (session()->has('success'))
-        <div class="alert">
-            <p><i class="fa fa-check-circle-o" aria-hidden="true"></i> {{ session()->get('success') }}</p>
+        <div class="alert alert-success" id="refresh" style="position:fixed; top:50px; right:15px; z-index:10000">
+            <p>{!! session()->get('success') !!}</p>
         </div>
     @elseif(session()->has('error'))
-        <div class="alert-error">
-            <p><i class="fa fa-ban" aria-hidden="true"></i> {{ session()->get('error') }}</p>
+        <div class="alert alert-danger" id="refresh" style="position:fixed; top:50px; right:15px; z-index:10000">
+            <p>{!! session()->get('error') !!}</p>
         </div>
     @endif
 

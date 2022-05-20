@@ -10,4 +10,14 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    function parseError($errors)
+    {
+        $string = '';
+        foreach($errors as $er)
+        {
+            $string .= $er .'<br>';
+        }
+        return $string;
+    }
 }
